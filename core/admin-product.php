@@ -1,4 +1,6 @@
 <?php
+//on démarre la session
+session_start();// à partir de ce moment ont a accèder à 
 // On analyse la valeur de la variable action
 // pour savoir si on doit ajouter un nouveau produit
 // ou si on doit modifier un produit existant
@@ -44,4 +46,7 @@ function addProduct(){
     //echo $sql;
     // 3 - Exécuter la requête SQL
     mysqli_query($connexion, $sql);
+    //4 mise en session d'un message de succés et redirection de l'user
+    $_session['message']='Le produit a bien étais ajouter ';
+    header('Location:../index.php');
 }
