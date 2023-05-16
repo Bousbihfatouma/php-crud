@@ -13,7 +13,7 @@ switch($_POST["action"]){
 // Fonction pour ajouter un produit
 function addProduct(){
     // 1 - Connexion à la BDD
-    require_once '../connexion.php';
+    require_once '../core/connexion.php';
     // 2 - Ecrire une requête SQL
     $nom  = trim(strip_tags(addslashes($_POST['nom'])));
     // On vérifie si l'utilisateur a saisi une description
@@ -47,6 +47,6 @@ function addProduct(){
     // 3 - Exécuter la requête SQL
     mysqli_query($connexion, $sql);
     //4 mise en session d'un message de succés et redirection de l'user
-    $_session['message']='Le produit a bien étais ajouter ';
+    $_SESSION['message']='Le produit a bien été ajouté ';
     header('Location:../index.php');
 }

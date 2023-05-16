@@ -1,10 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <?php include 'includes/_head.php'; ?>
+  <?php
+  $admin=true;
+  include '../includes/_head.php'; 
+  ?>
 </head>
 <body>
-  <?php include 'includes/_navbar.php'; ?>
+  <?php include '../includes/_navbar.php'; ?>
   <main class="container-lg bg-white py-4">
     <h1>Ajouter un produit</h1>
     <form action="core/admin-product.php" method="POST" enctype="multipart/form-data">
@@ -29,6 +32,7 @@
     </form>
     </main>
 </body>
+<?php include '../includes/_js.php';?>
 </html>
 
 
